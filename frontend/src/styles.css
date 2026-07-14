@@ -1,0 +1,78 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif; background: #0b0f14; color: #e6edf3; }
+.app { max-width: 1280px; margin: 0 auto; padding: 24px; }
+
+.topbar { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+.topbar h1 { margin: 0; font-size: 22px; }
+.subtitle { margin: 4px 0 0; color: #8fa3b3; font-size: 13px; }
+.topbar-actions { display: flex; gap: 10px; }
+
+.btn-primary, .btn-secondary {
+  border: none; border-radius: 8px; padding: 9px 16px; font-size: 13px; cursor: pointer;
+  font-weight: 600; transition: transform 0.1s ease;
+}
+.btn-primary { background: linear-gradient(135deg, #5b8cff, #3f6fe0); color: white; }
+.btn-secondary { background: #16202b; color: #cfe0ee; border: 1px solid #223142; display: inline-flex; align-items: center; }
+.btn-primary:hover, .btn-secondary:hover { transform: translateY(-1px); }
+.btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.toast {
+  background: #16202b; border: 1px solid #2c4a6e; color: #cfe0ee; padding: 10px 14px;
+  border-radius: 8px; margin-bottom: 14px; cursor: pointer; font-size: 13px;
+}
+
+.summary-strip { display: flex; gap: 24px; color: #8fa3b3; font-size: 13px; margin-bottom: 20px; flex-wrap: wrap; }
+.summary-strip span { color: #e6edf3; font-weight: 700; }
+
+.empty-state { text-align: center; padding: 80px 20px; color: #8fa3b3; }
+.empty-state h2 { color: #e6edf3; }
+
+.route-tabs { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+.route-tab {
+  background: #101720; border: 1px solid #223142; color: #8fa3b3; padding: 8px 16px;
+  border-radius: 999px; cursor: pointer; font-size: 13px;
+}
+.route-tab.active { background: #1b2a3d; color: #fff; border-color: #3f6fe0; }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.full-span { grid-column: 1 / -1; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+.card { background: #0f1620; border: 1px solid #1c2733; border-radius: 12px; padding: 18px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
+.card-header h3 { margin: 0; font-size: 15px; }
+
+.pill-group { display: flex; gap: 6px; }
+.pill { background: #16202b; border: 1px solid #223142; color: #8fa3b3; padding: 6px 12px; border-radius: 999px; font-size: 12px; cursor: pointer; }
+.pill.active { background: #3f6fe0; color: white; border-color: #3f6fe0; }
+
+.muted { color: #8fa3b3; font-size: 13px; }
+.error { color: #ff5d6c; font-size: 13px; }
+
+.tag { background: #16202b; border: 1px solid #223142; color: #8fa3b3; padding: 3px 10px; border-radius: 6px; font-size: 11px; }
+.tag.small { font-size: 10px; }
+.meta-row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+
+.alert-list, .rec-list, .anomaly-list { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-direction: column; gap: 8px; }
+.alert-list li { color: #ffb84d; font-size: 12.5px; }
+
+.rec-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; background: #101720; padding: 10px; border-radius: 8px; border: 1px solid #1c2733; }
+.rec-icon { font-size: 16px; }
+
+.anomaly-list li { font-size: 12.5px; display: flex; align-items: center; gap: 8px; }
+.dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.dot.high { background: #ff5d6c; }
+.dot.medium { background: #ffb84d; }
+.dot.low { background: #63d2a5; }
+
+.sim-controls { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 16px; }
+.sim-controls label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: #8fa3b3; }
+.sim-controls select, .sim-controls input[type="number"] { background: #101720; color: #e6edf3; border: 1px solid #223142; border-radius: 6px; padding: 6px 8px; }
+.sim-controls input[type="range"] { width: 150px; }
+
+.sim-result { border-top: 1px solid #1c2733; padding-top: 14px; }
+.sim-stats { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 12px; }
+.stat-label { display: block; font-size: 11px; color: #8fa3b3; }
+.stat-value { display: block; font-size: 20px; font-weight: 700; }
+.stat-value.warn { color: #ffb84d; }
+.narrative { color: #cfe0ee; font-size: 13px; line-height: 1.5; }
