@@ -1,0 +1,12 @@
+# Optional: install separately AFTER requirements.txt if you want Prophet as the
+# primary forecasting model instead of the Holt-Winters/seasonal-naive fallback.
+#
+#   pip install -r requirements.txt
+#   pip install -r requirements-optional.txt
+#
+# Prophet depends on cmdstanpy, which compiles a Stan binary on first import/use.
+# This build step is the one part of the stack that can be flaky on very new
+# Python releases (e.g. 3.14) before upstream wheels/toolchains catch up, so it's
+# kept optional. If this install fails, just skip it — the app works fully
+# without it (see forecasting.py's fallback cascade).
+prophet>=1.1.6

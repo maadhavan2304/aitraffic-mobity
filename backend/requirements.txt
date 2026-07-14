@@ -1,0 +1,13 @@
+# Core dependencies — tested to install cleanly on Python 3.14 (no native/Stan
+# build step required). Prophet is intentionally NOT in this file; see
+# requirements-optional.txt. The app runs fully without it — forecasting.py
+# automatically falls back to Holt-Winters / seasonal-naive if Prophet is absent.
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+sqlalchemy>=2.0.36
+pandas>=2.2.3
+numpy>=2.1.0
+scikit-learn>=1.5.2
+statsmodels>=0.14.4
+python-multipart>=0.0.12
+pydantic>=2.9.2
